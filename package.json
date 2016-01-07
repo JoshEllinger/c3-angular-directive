@@ -24,6 +24,10 @@
     "url": "https://github.com/jettro/c3-angular-sample/issues"
   },
   "homepage": "https://github.com/jettro/c3-angular-sample",
+  "dependencies": {
+    "angular": "^1.4.8",
+    "c3": "^0.4.11-rc4",
+  },
   "devDependencies": {
     "angular-jsdoc": "^0.3.8",
     "canonical-path": "0.0.2",
