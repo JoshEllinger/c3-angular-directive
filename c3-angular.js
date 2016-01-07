@@ -1,6 +1,7 @@
 /*! c3-angular - v1.0.1 - 2016-01-04
 * https://github.com/jettro/c3-angular-sample
 * Copyright (c) 2016 ; Licensed  */
+import c3 from 'node_modules/c3';
 angular.module('gridshore.c3js.chart', []);
 angular.module('gridshore.c3js.chart')
     .directive('chartAxes', ChartAxes);
@@ -17,14 +18,14 @@ angular.module('gridshore.c3js.chart')
  *   c3chart
  *
  * @param {String} valuesX Specify the key in the data object to use for the x value
- *   
+ *
  *   {@link http://c3js.org/reference.html#data-x}
  * @param {String} valuesXs Specify the different keys for different data columns in format
  *   columnId:key,columnId:key
  *
  *   {@link http://c3js.org/reference.html#data-xs}
  * @param {String} y Set the id(s) of columns to use the first y value (y). Format is comma separated.
- * 
+ *
  *   {@link http://c3js.org/reference.html#data-axes}
  * @param {String} y2 Set the id(s) of columns to use the second y value (y2) Format is comma separated.
  *
@@ -92,12 +93,12 @@ angular.module('gridshore.c3js.chart')
  *
  * Restrict To:
  *   Element
- * 
+ *
  * Parent element:
  *   c3chart
  *
  * @param {Boolean} axisRotate Configure to rotate the axis, javascript true means we rotate the axis.
- *   
+ *
  *   {@link http://c3js.org/reference.html#axis-rotated}
  *
  * @example
@@ -143,15 +144,15 @@ angular.module('gridshore.c3js.chart')
  *
  * @param {String} axis-position Location of the label. Can have following values:
  *
- *   - Horizontal: inner-right (default), inner-center, inner-left, outer-right, outer-center, outer-left 
+ *   - Horizontal: inner-right (default), inner-center, inner-left, outer-right, outer-center, outer-left
  *   - Vertical: inner-top (default), inner-middle, inner-bottom, outer-top, outer-middle, outer-bottom
- *   
+ *
  *   {@link http://c3js.org/reference.html#data-x| c3js doc}
  * @param {String} axis-label Set the text for the label of the x axis.
  *
  *   {@link http://c3js.org/reference.html#axis-x-label| c3js doc}
  * @param {Number} padding-left Set padding on the left side of the x axis.
- * 
+ *
  *   {@link http://c3js.org/reference.html#axis-x-padding| c3js doc}
  * @param {Number} padding-right Set padding on the right side of the x axis.
  *
@@ -212,7 +213,7 @@ function ChartAxisX () {
         if (height) {
             axis.height = parseInt(height);
         }
-        
+
         if (attrs.show === 'false') {
             axis.show = false;
         }
@@ -229,7 +230,7 @@ function ChartAxisX () {
         }
         var type=attrs.axisType;
         if (type) {
-            axis.type=type;   
+            axis.type=type;
         }
         chartCtrl.addAxisProperties('x', axis);
 
@@ -265,13 +266,13 @@ angular.module('gridshore.c3js.chart')
  *   chart-axis-x
  *
  * @param {Number} tick-count Specify the number of ticks on the x axis.
- *   
+ *
  *   {@link http://c3js.org/reference.html#axis-x-tick-count| c3js doc}
  * @param {Boolean} tick-culling Culling means not all ticks will be shown, for category data this is by default false, for other data true.
  *
  *   {@link http://c3js.org/reference.html#axis-x-tick-culling| c3js doc}
  * @param {Number} tick-culling-max Set the maximum number of ticks, if specified culling is by default true.
- * 
+ *
  *   {@link http://c3js.org/reference.html#axis-x-tick-culling-max| c3js doc}
  * @param {Boolean} tick-multiline Not sure what this does, not documented.
  *
@@ -310,7 +311,7 @@ angular.module('gridshore.c3js.chart')
  * @example
  * Usage:
  *   <chart-axis-x-tick tick-rotate="..." tick-count="..."/>
- * 
+ *
  * Example:
  *   {@link http://jettro.github.io/c3-angular-directive/#examples}
  *
@@ -454,15 +455,15 @@ angular.module('gridshore.c3js.chart')
  *
  * @param {String} axis-position Location of the label. Can have following values:
  *
- *   - Horizontal: inner-right (default), inner-center, inner-left, outer-right, outer-center, outer-left 
+ *   - Horizontal: inner-right (default), inner-center, inner-left, outer-right, outer-center, outer-left
  *   - Vertical: inner-top (default), inner-middle, inner-bottom, outer-top, outer-middle, outer-bottom
- *   
+ *
  *   {@link http://c3js.org/reference.html#data-y| c3js doc}
  * @param {String} axis-label Set the text for the label of the y or y2 axis.
  *
  *   {@link http://c3js.org/reference.html#axis-y-label| c3js doc}
  * @param {Number} padding-top Set padding on the top side of the y or y2 axis.
- * 
+ *
  *   {@link http://c3js.org/reference.html#axis-y-padding| c3js doc}
  * @param {Number} padding-bottom Set padding on the bottom side of the y or y2 axis.
  *
@@ -674,14 +675,14 @@ angular.module('gridshore.c3js.chart')
  *   c3chart
  *
  * @param {Number} width Fixed with of the bars in pixels
- *   
+ *
  *   {@link http://c3js.org/reference.html#bar-width| c3js doc}
- * 
+ *
  * @param {Number} ratio Change the width of the bar by ratio
  *
  *   {@link http://c3js.org/reference.html#bar-width-ratio| c3js doc}
  * @param {Boolean} zerobased Set if we start from zero, default is true.
- * 
+ *
  *   {@link http://c3js.org/reference.html#bar-zerobased| c3js doc}
  *
  * @example
@@ -689,7 +690,7 @@ angular.module('gridshore.c3js.chart')
  *   <chart-bar width="..." ratio="..." zerobased="..."/>
  * Example:
  *   {@link http://jettro.github.io/c3-angular-directive/#examples}
- * 
+ *
  */
 
 function ChartBar() {
@@ -730,7 +731,7 @@ angular.module('gridshore.c3js.chart')
  *   `c3chart` is the main directive to create the chart. Use it to set the padding properties and include the other directives. You can also register the callback in this directive that receives the initialised chart object.
  *
  *   When using multiple charts in the same page you need to provide unique bind-id parameters.
- * 
+ *
  * Restrict To:
  *   Element
  *
@@ -738,62 +739,62 @@ angular.module('gridshore.c3js.chart')
  *   -
  *
  * @param {Number} padding-top Set the top padding of the chart.
- *   
+ *
  *   {@link http://c3js.org/reference.html#padding-top| c3js doc}
- * 
+ *
  * @param {Number} padding-bottom Set the bottom padding of the chart.
  *
  *   {@link http://c3js.org/reference.html#padding-bottom| c3js doc}
  * @param {Number} padding-right Set the right padding of the chart.
- * 
+ *
  *   {@link http://c3js.org/reference.html#padding-right| c3js doc}
  *
  * @param {Number} padding-left Set the left padding of the chart.
- * 
+ *
  *   {@link http://c3js.org/reference.html#padding-left| c3js doc}
  *
  * @param {String} bind-id Id of the chart, needs to be unique when using multiple charts on one page.
- * 
+ *
  *   {@link http://c3js.org/reference.html#bindto| c3js doc}
  *
  * @param {String} sort-data You can enter three different versions: asc, desc, null. Using this sorting you can change the order of stacking and the order of the pieces of a pie or donut.
- * 
+ *
  *   {@link http://c3js.org/reference.html#data-order| c3js doc}
  *
  * @param {Boolean} show-labels Configure to show the labels 'true' or not, default is false.
- * 
+ *
  *   {@link http://c3js.org/reference.html#data-labels| c3js doc}
  *
  * @param {Function} labels-format-function Provide a function to format the labels.
- * 
+ *
  *   {@link http://c3js.org/reference.html#data-labels-format| c3js doc}
  *
  * @param {Boolean} show-subchart Configure to show the subchart or not (default).
- * 
+ *
  *   {@link http://c3js.org/reference.html#subchart-show| c3js doc}
  *
  * @param {Boolean} enable-zoom Configure to enable zoom in the chart or not (defaut).
- * 
+ *
  *   {@link http://c3js.org/reference.html#subchart-show| c3js doc}
  *
  * @param {Boolean} enable-zoom Configure to enable zoom in the chart or not (defaut).
- * 
+ *
  *   {@link http://c3js.org/reference.html#subchart-show| c3js doc}
  *
  * @param {Array} chart-data Provide a reference to a collection that can contain dynamic data. When providing this attrbiute you also need to provide the chart-columns attribute.
- * 
+ *
  *   Array consisting of objects with values for the different columns: [{"data1":10,"data2":20},{"data1":50,"data2":60}]
  *
  * @param {Array} chart-columns Provide a reference to a collection that contains the columns. When providing this attrbiute you also need to provide the chart-data attribute.
- * 
+ *
  *   Array consisting of objects with some properties for the different columns: [{"id": "data1", "type": "line"}, {"id": "data2", "type": "bar"}]
  *
  * @param {Object} chart-x Provide information about the x column. Used when adding dynamic data to specify the field that contains the x data value.
- * 
+ *
  *   Object containing reference to the id of the x data field: {"id": "x", "name": "My Data points"}
  *
  * @param {Function} callback-function Use this if you want to interact with the chart object using the api
- * 
+ *
  *   {@link http://c3js.org/reference.html#api-focus| c3js doc}
  *
  * @param {Number} transition-duration Duration of transition (in milliseconds) for chart animation. If you specify 0, transitions will be disabled which is good for large datasets.
@@ -807,15 +808,15 @@ angular.module('gridshore.c3js.chart')
  *   <c3chart >
  *      <!-- sub elements -->
  *   </c3chart>
- * 
+ *
  * Example:
  *
  *   {@link http://jettro.github.io/c3-angular-directive/#examples}
- * 
+ *
  * Shows how to use dynamic data points.
- * 
+ *
  * <c3chart bindto-id="dynamicpie" chart-data="piePoints" chart-columns="pieColumns"/>
- * 
+ *
  *     $scope.piePoints = [{"data1": 70, "data2": 30, "data3": "100"}];
  *     $scope.pieColumns = [{"id": "data1", "type": "pie"}, {"id": "data2", "type": "pie"}, {
  *       "id": "data3",
@@ -922,7 +923,7 @@ angular.module('gridshore.c3js.chart')
  *
  * @param {String} color-pattern A string containing comma separated hex colors
  * @param {String} thresholds A string containing comma separated numeric values
- *   
+ *
  * {@link http://c3js.org/reference.html#color-pattern| c3js docs}
  * @param {Function} color-function Provide a function that receives the value to determine a color for that value.
  *
@@ -931,11 +932,11 @@ angular.module('gridshore.c3js.chart')
  * @example
  * Usage:
  *   <chart-color color-pattern="..." color-function="..." thresholds="..."/>
- * 
+ *
  * Example:
  *   {@link http://jettro.github.io/c3-angular-directive/#examples}
- * 
- *   
+ *
+ *
  */
 function ChartColors () {
     var colorsLinker = function (scope, element, attrs, chartCtrl) {
@@ -948,7 +949,7 @@ function ChartColors () {
         if(thresholds){
             chartCtrl.addColorThresholds(thresholds.split(","));
         }
-        
+
         if (attrs.colorFunction) {
             chartCtrl.addColorFunction(scope.colorFunction());
         }
@@ -981,7 +982,7 @@ angular.module('gridshore.c3js.chart')
  *   c3chart
  *
  * @param {String} column-id The id used to uniquely identify the column
- *   
+ *
  * @param {String} column-values The values for this column to plot.
  *
  * @param {String} column-type The type of the column to show: line, spline, bar, step, area, area-spline, area-step, scatter, pie, donut, gauge
@@ -999,16 +1000,16 @@ angular.module('gridshore.c3js.chart')
  * @example
  * Usage:
  *   <chart-column column-values="..."/>
- * 
+ *
  * Example:
  *   {@link http://jettro.github.io/c3-angular-directive/#examples}
- * 
+ *
  * <chart-column column-id="data 1"
  *               column-name="Data 1"
  *               column-color="red"
  *               column-values="30,200,100,400,150,250"
- *               column-type="spline"/>  
- * 
+ *               column-type="spline"/>
+ *
  */
 function ChartColumn () {
     var columnLinker = function (scope, element, attrs, chartCtrl) {
@@ -1662,11 +1663,11 @@ angular.module('gridshore.c3js.chart')
  * @param {Boolean} show-label Show labels in the Donut.
  *
  *   {@link http://c3js.org/reference.html#donut-label-show| c3js docs}
- *   
+ *
  * @param {Number} threshold-label Set the threshold to show or hide labels.
  *
  *   {@link http://c3js.org/reference.html#donut-label-threshold| c3js docs}
- * 
+ *
  * @param {Boolean} expand Enable or disable whether to expand a pie part. True is the default.
  *
  *   {@link http://c3js.org/reference.html#donut-expand| c3js docs}
@@ -1686,10 +1687,10 @@ angular.module('gridshore.c3js.chart')
  * @example
  * Usage:
  *   <chart-donut show-label="..." threshold-label="..." expand="..." width="..." title="..."/>
- * 
+ *
  * Example:
  *   {@link http://jettro.github.io/c3-angular-directive/#examples}
- * 
+ *
  * <c3chart bindto-id="donut-plot1-chart">
  *   <chart-column column-id="Data 1"
  *                 column-values="70"
@@ -1702,7 +1703,7 @@ angular.module('gridshore.c3js.chart')
  *                 column-type="donut"/>
  *   <chart-donut title="Donut" width="60"/>
  * </c3chart>
- */    
+ */
 function ChartDonut() {
     var donutLinker = function (scope, element, attrs, chartCtrl) {
         var donut = {};
@@ -1757,7 +1758,7 @@ angular.module('gridshore.c3js.chart')
  *   c3chart
  *
  * @param {Function} on-init The on init callback function.
- *   
+ *
  *   {@link http://c3js.org/reference.html#oninit| c3js docs}
  *
  * @param {Function} on-rendered Provide the callback to respond to on-rendered. Basically, this callback will be called in each time when the chart is redrawed.
@@ -1795,10 +1796,10 @@ angular.module('gridshore.c3js.chart')
  * @example
  * Usage:
  *   <chart-events on-init="..." on-rendered="..."/>
- * 
+ *
  * Example:
  *   {@link http://jettro.github.io/c3-angular-directive/#examples}
- * 
+ *
  *   <c3chart bindto-id="donut-plot1-chart">
  *     <chart-column column-id="Data 1"
  *                   column-values="70"
@@ -1884,7 +1885,7 @@ angular.module('gridshore.c3js.chart')
  *   c3chart
  *
  * @param {Number} min The minimum value used in the Gauge.
- *   
+ *
  *   {@link http://c3js.org/reference.html#gauge-min| c3js docs}
  *
  * @param {Number} max The maximum value used in the Guage.
@@ -1914,11 +1915,11 @@ angular.module('gridshore.c3js.chart')
  * @example
  * Usage:
  *   <chart-gauge min="..." max="..."/>
- * 
+ *
  * Example:
  *   {@link http://jettro.github.io/c3-angular-directive/#examples}
- * 
- *   
+ *
+ *
  */
 function ChartGauge () {
     var gaugeLinker = function (scope, element, attrs, chartCtrl) {
@@ -1974,7 +1975,7 @@ angular.module('gridshore.c3js.chart')
  *   c3chart
  *
  * @param {Boolean} showX Whether to show the x axis grid.
- *   
+ *
  *   {@link http://c3js.org/reference.html#grid-x-show| c3js docs}
  *
  * @param {Boolean} showY Whether to show the y axis grid.
@@ -1992,15 +1993,15 @@ angular.module('gridshore.c3js.chart')
  * @example
  * Usage:
  *   <chart-grid showX="..." showY="..." showY2="..."/>
- * 
+ *
  * Example:
  *   {@link http://jettro.github.io/c3-angular-directive/#examples}
- * 
+ *
  * <chart-grid show-x="false" show-y="true">
  *   <chart-grid-optional axis-id="x" grid-value="1" grid-text="Start"/>
  *   <chart-grid-optional axis-id="y" grid-value="20" grid-text="Minimum"/>
  *   <chart-grid-optional axis-id="y" grid-value="200" grid-text="Maximum"/>
- * </chart-grid>  
+ * </chart-grid>
  */
 function ChartGrid () {
     var gridLinker = function (scope, element, attrs, chartCtrl) {
@@ -2047,7 +2048,7 @@ angular.module('gridshore.c3js.chart')
  *   gridDirective
  *
  * @param {String} axisId x, y or y2.
- *   
+ *
  *   {@link http://c3js.org/reference.html#grid-x-lines| c3js docs}
  *
  * @param {Number} value Value where to print the additional grid line.
@@ -2061,15 +2062,15 @@ angular.module('gridshore.c3js.chart')
  * @example
  * Usage:
  *   <chart-grid-optional axis-id="..." value="..." text="..."/>
- * 
+ *
  * Example:
  *   {@link http://jettro.github.io/c3-angular-directive/#examples}
- * 
+ *
  * <chart-grid show-x="false" show-y="true">
  *   <chart-grid-optional axis-id="x" grid-value="1" grid-text="Start"/>
  *   <chart-grid-optional axis-id="y" grid-value="20" grid-text="Minimum"/>
  *   <chart-grid-optional axis-id="y" grid-value="200" grid-text="Maximum"/>
- * </chart-grid>  
+ * </chart-grid>
  */
 function ChartGridOptional() {
     var gridLinker = function (scope, element, attrs, chartCtrl) {
@@ -2096,7 +2097,7 @@ angular.module('gridshore.c3js.chart')
  * @ngdoc directive
  * @name chartGroup
  * @description
- *  `chart-group` is used to group columns, for instance to add them to the 
+ *  `chart-group` is used to group columns, for instance to add them to the
  * same column for the same x value. Input is a comma separated string with the
  * id's of the columns to group.
  *
@@ -2107,17 +2108,17 @@ angular.module('gridshore.c3js.chart')
  *   c3chart
  *
  * @param {String} groupValues Comma separated column ids.
- *   
+ *
  *   {@link http://c3js.org/reference.html#data-groups| c3js docs}
  *
  *
  * @example
  * Usage:
  *   <chart-group group-values="..."/>
- * 
+ *
  * Example:
  *   {@link http://jettro.github.io/c3-angular-directive/#examples}
- * 
+ *
  * <c3chart bindto-id="stacked-bar-plot1-chart">
  *   <chart-column column-id="data 1"
  *             column-name="Data 1"
@@ -2130,7 +2131,7 @@ angular.module('gridshore.c3js.chart')
  *             column-values="50,20,10,40,15,25"
  *             column-type="bar"/>
  *   <chart-group group-values="data 1,data 2"/>
- * </c3chart>  
+ * </c3chart>
  */
 function ChartGroup () {
     var groupLinker = function (scope, element, attrs, chartCtrl) {
@@ -2186,10 +2187,10 @@ angular.module('gridshore.c3js.chart')
  * @example
  * Usage:
  *   <chart-legend show-legend="..." legend-position="..." on-click="..."/>
- * 
+ *
  * Example:
  *   {@link http://jettro.github.io/c3-angular-directive/#examples}
- * 
+ *
  * <chart-legend show-legend="true" legend-position="right"/>
  */
 function ChartLegend () {
@@ -2324,11 +2325,11 @@ angular.module('gridshore.c3js.chart')
  *   c3chart
  *
  * @param {Boolean} showLabel Whether to show a label for each pie part.
- *   
+ *
  *   {@link http://c3js.org/reference.html#pie-label-show| c3js docs}
  *
  * @param {Boolean} expand Whether to expand on mouse over.
- *   
+ *
  *   {@link http://c3js.org/reference.html#pie-expand| c3js docs}
  *
  * @param {Number} thresholdLabel Show label if value is higher than the provided value.
@@ -2342,10 +2343,10 @@ angular.module('gridshore.c3js.chart')
  * @example
  * Usage:
  *   <chart-pie show-label="..." expand="..."/>
- * 
+ *
  * Example:
  *   {@link http://jettro.github.io/c3-angular-directive/#examples}
- * 
+ *
  * <c3chart bindto-id="pie-plot1-chart">
  *   <chart-column column-id="Data 1" column-values="70" column-type="pie"/>
  *   <chart-column column-id="Data 2" column-values="35" column-type="pie"/>
@@ -2402,14 +2403,14 @@ angular.module('gridshore.c3js.chart')
  *   c3chart
  *
  * @param {Boolean} showPoint Whether to show points in the chart.
- *   
+ *
  *   {@link http://c3js.org/reference.html#point-show| c3js docs}
  *
  * @param {Boolean} pointExpandEnabled Whether to expand on mouse over.
- *   
+ *
  *   {@link http://c3js.org/reference.html#point-focus-expand-enabled| c3js docs}
  *
- * @param {Number} pointExpandRadius Radius of the point when expanded. Default is 1.75 times the 
+ * @param {Number} pointExpandRadius Radius of the point when expanded. Default is 1.75 times the
  * normal radius.
  *
  *   {@link http://c3js.org/reference.html#point-focus-expand-r| c3js docs}
@@ -2425,10 +2426,10 @@ angular.module('gridshore.c3js.chart')
  * @example
  * Usage:
  *   <chart-points show-point="..." point-expand-enabled="..."/>
- * 
+ *
  * Example:
  *   {@link http://jettro.github.io/c3-angular-directive/#examples}
- * 
+ *
  */
 function ChartPoints () {
     var pointLinker = function (scope, element, attrs, chartCtrl) {
@@ -2480,23 +2481,23 @@ angular.module('gridshore.c3js.chart')
  * Parent Element:
  *   c3chart
  *
- * @param {Number} chartWidth Width of the chart element, by default it will be 
+ * @param {Number} chartWidth Width of the chart element, by default it will be
  * calculated from the parent container.
- *   
+ *
  *   {@link http://c3js.org/reference.html#size-width| c3js docs}
  *
- * @param {Number} chartHeight Height of the chart element, by default it will be 
+ * @param {Number} chartHeight Height of the chart element, by default it will be
  * calculated from the parent container.
- *   
+ *
  *   {@link http://c3js.org/reference.html#size-height| c3js docs}
  *
  * @example
  * Usage:
  *   <chart-size chart-height="..." chart-width="..."/>
- * 
+ *
  * Example:
  *   {@link http://jettro.github.io/c3-angular-directive/#examples}
- * 
+ *
  * <chart-size chart-height="600" chart-width="600"/>
  */
 function ChartSize() {
@@ -2542,35 +2543,35 @@ angular.module('gridshore.c3js.chart')
  *   c3chart
  *
  * @param {Boolean} showTooltip Whether to show the tooltip or not.
- *   
+ *
  *   {@link http://c3js.org/reference.html#tooltip-show| c3js docs}
  *
  * @param {Boolean} hideTooltipTitle Whether to show the tooltip title or not.
- *   
- * @param {Boolean} groupTooltip Whether to group all tooltips of the different 
+ *
+ * @param {Boolean} groupTooltip Whether to group all tooltips of the different
  * columns in the chart.
- *   
+ *
  *   {@link http://c3js.org/reference.html#tooltip-grouped| c3js docs}
  *
  * @param {Function} titleFormatFunction Function to format the title of the tooltip.
- *   
+ *
  *   {@link http://c3js.org/reference.html#tooltip-format-title| c3js docs}
  *
  * @param {Function} nameFormatFunction Function to format the name of the tooltip.
- *   
+ *
  *   {@link http://c3js.org/reference.html#tooltip-format-name| c3js docs}
  *
  * @param {Function} valueFormatFunction Function to format the value of the tooltip.
- *   
+ *
  *   {@link http://c3js.org/reference.html#tooltip-format-value| c3js docs}
  *
  * @example
  * Usage:
  *   <chart-size chart-height="..." chart-width="..."/>
- * 
+ *
  * Example:
  *   {@link http://jettro.github.io/c3-angular-directive/#examples}
- * 
+ *
  */
 function ChartTooltip () {
     var tooltipLinker = function (scope, element, attrs, chartCtrl) {
