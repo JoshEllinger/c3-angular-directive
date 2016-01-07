@@ -1,7 +1,7 @@
 /*! c3-angular - v1.0.1 - 2016-01-04
 * https://github.com/jettro/c3-angular-sample
 * Copyright (c) 2016 ; Licensed  */
-import c3 from 'node_modules/c3';
+import c3 from 'c3';
 angular.module('gridshore.c3js.chart', []);
 angular.module('gridshore.c3js.chart')
     .directive('chartAxes', ChartAxes);
